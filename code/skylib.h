@@ -12,11 +12,15 @@ int inputBuild(int allB[][3])
     for (i = 0; i < 5000 && newBuild == 1; i++) //maximum of 5000 buildings, ending there or when user decides to stop
     {
         //"while" with set of rules to be considered when inserting building data
-        do
+
+        printf("\nInsert building data (Li, Hi, Ri): ");
+        scanf("%d %d %d", &allB[i][0], &allB[i][1], &allB[i][2]);
+        while (allB[i][0] >= 10000 || allB[i][1] >= 10000 || allB[i][1] <= 0 || allB[i][2] >= 10000 || allB[i][0] >= allB[i][2] || allB[i][0] <= i || (i != 0 && allB[i][0] <= allB[i - 1][0]))
         {
-            printf("\nInsert building data (Li, Hi, Ri): ");
+            fflush(stdin);
+            printf("\nInvalid input. Insert building data again(Li, Hi, Ri): ");
             scanf("%d %d %d", &allB[i][0], &allB[i][1], &allB[i][2]);
-        } while (allB[i][0] >= 10000 || allB[i][1] >= 10000 || allB[i][1] <= 0 || allB[i][2] >= 10000 || allB[i][0] >= allB[i][2] || allB[i][0] <= i || (i != 0 && allB[i][0] <= allB[i - 1][0]));
+        }
 
         //query to stop adding buildings
         do
