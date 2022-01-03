@@ -14,7 +14,7 @@ int inputBuild(int allB[][3])
         printf("\nInsert building data (Li, Hi, Ri): ");
         scanf("%d %d %d", &allB[i][0], &allB[i][1], &allB[i][2]); //write data into arrays
         //"while" with set of rules to be considered when inserting building data
-        while (allB[i][0] >= 10000 || allB[i][1] >= 10000 || allB[i][1] <= 0 || allB[i][2] >= 10000 || allB[i][0] >= allB[i][2] || allB[i][0] <= i || (i != 0 && allB[i][0] <= allB[i - 1][0]))
+        while (allB[i][0] > 10000 || allB[i][1] > 10000 || allB[i][1] <= 0 || allB[i][2] > 10000 || allB[i][0] >= allB[i][2] || allB[i][0] <= i || (i != 0 && allB[i][0] <= allB[i - 1][0]))
         {
             fflush(stdin); //clean buffer to avoid infinte loop on scanf when different type input is inserted
             printf("\nInvalid input. Insert building data again(Li, Hi, Ri): ");
