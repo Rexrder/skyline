@@ -36,7 +36,7 @@ int searchlastB(int lastB, int currB, int allB[][3])
     int stop = 0;
     for (int i = lastB; i <= currB && stop == 0; i++) //condition takes into account all buildings between current last building and current highest building
     {
-        if (allB[i][2] > allB[currB][0]) //if buildings collide
+        if (allB[i][2] >= allB[currB][2]) //if buildings collide
         {
             stop = 1;
             lastB = i;
