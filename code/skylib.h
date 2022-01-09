@@ -85,7 +85,10 @@ int gap(int lastB, int iBuild, int currB, int allB[][3], int end)
     }
     if (max != -1) //if there's a building...
     {
-        printf(", %d, %d", allB[currB][2], allB[max][1]); //print right coordinate of current building and height of new highest building
+        if (allB[currB][1] > allB[max][1])
+        {
+            printf(", %d, %d", allB[currB][2], allB[max][1]); //print right coordinate of current building and height of new highest building
+        }
         if (end == 0) //if it's not the end...
         {
             currB = buildCollision(lastB, iBuild, max, allB); //analyse collisions between new current building and i building
